@@ -1,5 +1,8 @@
 package hello.core.lifecycle;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+
 public class NetworkClient {
 
 
@@ -49,12 +52,25 @@ public class NetworkClient {
 //  }
 
   // @Bean 어노테이션에 초기화, 소멸 콜백 지정
+//  public void init() throws Exception {
+//    System.out.println("NetworkClient afterPropertiesSet");
+//    connect();
+//    call("초기화 연결 메세지");
+//  }
+//
+//  public void close() throws Exception {
+//    System.out.println("NetworkClient destroy");
+//    disconnect();
+//  }
+
+  @PostConstruct
   public void init() throws Exception {
     System.out.println("NetworkClient afterPropertiesSet");
     connect();
     call("초기화 연결 메세지");
   }
 
+  @PreDestroy
   public void close() throws Exception {
     System.out.println("NetworkClient destroy");
     disconnect();
