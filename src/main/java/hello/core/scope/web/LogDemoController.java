@@ -3,7 +3,6 @@ package hello.core.scope.web;
 import hello.core.scope.common.MyLogger;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class LogDemoController {
 
   private final LogDemoService logDemoService;
-//  private final ObjectProvider<MyLogger> loggerProvider;
+  //  private final ObjectProvider<MyLogger> loggerProvider;
   private final MyLogger myLogger;
 
   @RequestMapping("log-demo")
